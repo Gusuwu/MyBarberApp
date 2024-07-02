@@ -1,0 +1,21 @@
+
+  <ion-card class="custom-card">
+    <img [src]="image" alt="Imagen de ejemplo"/>
+    <ion-card-header>
+      <ion-card-title>{{ precio.titulo }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>{{ precio.descripcion }}</ion-card-subtitle>
+    </ion-card-content>
+    <hr>
+    <div style="display: flex;
+    justify-content: space-between;padding: 5px;">
+      <div *ngIf="isAdmin" (click)="openModal()" style="width: 15%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+        <ion-icon name="pencil" slot="icon-only" style="font-size: 2.5em;"></ion-icon> 
+      </div>
+      <div *ngIf="isAdmin" (click)="notDisponible()" [ngStyle]="{ 'background-color': precio.notDisponible ? 'green' : 'brown' }" style="width: 15%; color: white; display: flex; flex-direction: column; align-items: center;border-radius: 15px; padding: 5px;">
+        <ion-icon name="power" slot="icon-only" style="font-size: 2.5em;"></ion-icon> 
+      </div>
+      <ion-card-title style="padding: 5px;margin-left: auto;">{{ precio.valor | currency }}</ion-card-title>
+    </div>
+  </ion-card>

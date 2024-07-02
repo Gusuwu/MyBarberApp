@@ -1,0 +1,13 @@
+/* En tu archivo de estilos global (por ejemplo, global.scss) o en el componente específico */
+.custom-datetime {
+    max-width: 200px; /* Ajusta el ancho máximo según tus necesidades */
+    margin-left: auto; /* Alinea a la derecha */
+    --padding-start: 20px; /* Ajusta el espacio a la izquierda */
+  }
+/* Ajustes adicionales para el componente ion-datetime */
+ion-datetime {
+    --border-radius: 10px; /* Radio de borde */
+    --inner-padding-bottom: 10px; /* Espacio interno inferior */
+    --placeholder-color: #999; /* Color del marcador de posición */
+  }
+    

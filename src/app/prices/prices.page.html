@@ -1,0 +1,11 @@
+<header-barber></header-barber>
+<ion-content [fullscreen]="true">
+    <div>
+        <div style="text-align: center;">
+        <h2>Nuestros precios</h2>
+    </div>
+          <div *ngFor="let precio of precios">
+            <precio-card [precio]="precio" ></precio-card>
+          </div>
+      </div>
+</ion-content>

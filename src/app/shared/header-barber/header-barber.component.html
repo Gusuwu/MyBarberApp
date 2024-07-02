@@ -1,0 +1,11 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons *ngIf="showBack" (click)="back()" slot="start">
+      <ion-icon name="arrow-back" style="font-size: 2em;"></ion-icon>
+    </ion-buttons>
+    <ion-title>MyBarber</ion-title>
+    <ion-buttons *ngIf="showAccount" (click)="myAccount()" slot="end">
+      <ion-icon name="person" style="font-size: 2em;"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

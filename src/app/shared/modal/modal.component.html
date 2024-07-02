@@ -1,0 +1,24 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar precio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-item style="width: 100%;">
+      <ion-label >Precio</ion-label>
+      <ion-input type="number" formControlName="precio"></ion-input>
+      <span *ngIf="form.get('precio')?.touched && (form.get('precio')?.value == null || form.get('precio')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+    </ion-item>
+  </form>
+  <div style="padding: 15px;display: flex;
+  justify-content: space-between;" *ngIf="form">
+    <ion-button color="danger" style="width: 94%; color: white;" (click)="goBack()">Cancelar</ion-button>
+    <ion-button color="success" type="submit" style="width: 94%; color: white;" (click)="save()">Guardar</ion-button>
+  </div>
+</ion-content>

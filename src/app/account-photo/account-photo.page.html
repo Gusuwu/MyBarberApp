@@ -1,0 +1,7 @@
+<header-barber></header-barber>
+<ion-content [fullscreen]="true">
+  <img [src]="image" *ngIf="usuario.fotoUrl" alt="Foto del usuario">
+  <br>
+  <ion-input type="file" (change)="onFileSelected($event)"></ion-input>
+  <ion-button (click)="onUpload()">Subir Imagen</ion-button>
+</ion-content>

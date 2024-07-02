@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ titulo }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item style="width: 100%;">
+      <ion-label > {{ texto}} </ion-label>
+    </ion-item>
+  <div style="padding: 15px;display: flex;
+  justify-content: space-between;">
+    <ion-button color="success" style="width: 94%; color: white;" (click)="dismiss()">Aceptar</ion-button>
+  </div>
+</ion-content>

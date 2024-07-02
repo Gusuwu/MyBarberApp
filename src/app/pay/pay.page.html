@@ -1,0 +1,42 @@
+<header-barber></header-barber>
+
+<ion-content [fullscreen]="true">
+  <div style="padding: 2px;text-align: center;">
+    <h1>Nuestros metodos de pago</h1>
+    <p>Contamos, por el momento con el pago en efectivo en el local o mediante transferencia, la cual la puedes realizar despues de tu corte o antes de asistir.
+      Recuerda subir el comprobante en ese caso o mandarlo por Whatsapp.
+    </p>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle style="text-align: center;">Datos necesarios para poder hacer la transferencia</ion-card-subtitle>
+      <ion-card-title style="display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;">Datos del CVU<ion-icon name="information-circle-outline" style="font-size: 1.5em;"></ion-icon></ion-card-title>
+    </ion-card-header>
+    <hr>
+      <ion-card-content>
+        <div class="center-content">
+          <h5>Nombre y Apellido</h5>
+          <h4>Baez Adrian Ezequiel</h4>
+          <h5>CUIL</h5>
+          <h4>20437881066</h4>
+          <h5>Entidad</h5>
+          <h4>MercadoPago</h4>
+          <h5>Alias</h5>
+          <h4>BAEZADRIAN10</h4>
+        </div>    
+      </ion-card-content>
+      <hr>
+      <div style="display: flex; justify-content: center;margin-bottom: 5px;">
+        <ion-button (click)="uploadDoc()" fill="solid" color="success">Subir comprobante <ion-icon name="cloud-upload"></ion-icon></ion-button>
+      </div>
+    </ion-card>
+
+    <div style="padding: 2px;text-align: center;">
+      <h1>Muy pronto!</h1>
+      <p>Estamos trabajando para que puedas pagar tu corte de manera online sin perder tanto tiempo usando tu tarjeta de credio o debito
+      </p>
+    </div>
+</ion-content>

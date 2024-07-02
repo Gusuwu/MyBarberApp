@@ -1,0 +1,23 @@
+.wizard-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1e2023;
+    padding: 10px;
+  }
+  
+  .step-button {
+    border: none;
+    background-color: #ddd;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .step-button.active {
+    background-color: #000000;
+    color: #fff;
+  }
+  

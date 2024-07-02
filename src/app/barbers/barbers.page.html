@@ -1,0 +1,13 @@
+<header-barber></header-barber>
+
+<ion-content [fullscreen]="true">
+    <div>
+        <div style="text-align: center;">
+        <h2>Nuestros barberos</h2>
+        </div>
+        <div *ngFor="let barber of barberos">
+          <barber-card [barbero]="barber" ></barber-card>
+        </div>
+      </div>
+      
+</ion-content>

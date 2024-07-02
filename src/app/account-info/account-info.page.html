@@ -1,0 +1,37 @@
+<header-barber></header-barber>
+
+<ion-content [fullscreen]="true">
+  <div style="padding: 2px;text-align: center;">
+    <h1>Informacion de tu cuenta</h1>
+  </div>
+  <ion-card>
+    <ion-card-content style="display: flex;flex-direction: column;">
+      <span style="font-size: 20px"> Nombre </span>
+      <span style="font-size: 30px; color: white;"> {{ usuario.nombre }} </span>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content style="display: flex;flex-direction: column;">
+      <span style="font-size: 20px"> Usuario </span>
+      <span style="font-size: 30px; color: white;"> {{ usuario.usuario }} </span>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content style="display: flex;flex-direction: column;">
+      <span style="font-size: 20px"> Correo </span>
+      <span style="font-size: 30px; color: white;"> {{ usuario.correo }} </span>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content style="display: flex;flex-direction: column;">
+      <span style="font-size: 20px"> Telefono </span>
+      <span style="font-size: 30px; color: white;"> {{ usuario.telefono }} </span>
+    </ion-card-content>    
+  </ion-card>
+  <ion-card *ngIf="usuario.notas">
+    <ion-card-content  style="display: flex;flex-direction: column;">
+      <span style="font-size: 20px"> Notas </span>
+      <span style="font-size: 30px; color: white;"> {{ usuario.notas }} </span>
+    </ion-card-content>    
+  </ion-card>
+</ion-content>

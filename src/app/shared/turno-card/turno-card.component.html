@@ -1,0 +1,15 @@
+
+<ion-card class="custom-card">
+  <ion-card-header>
+    <ion-card-title> Cliente: {{ turno.nombreUsuario }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-card-subtitle> Servicio: {{ turno.descripcionPrecio }}</ion-card-subtitle>
+  </ion-card-content>
+  <hr>
+  <div style="display: flex;
+  justify-content: space-between;padding: 5px;">
+    <ion-card-title style="padding: 5px;">Horario: {{ turno.horario}}</ion-card-title>
+    <ion-card-title style="padding: 5px;margin-left: auto;">{{ turno.valorPrecio | currency }}</ion-card-title>
+  </div>
+</ion-card>

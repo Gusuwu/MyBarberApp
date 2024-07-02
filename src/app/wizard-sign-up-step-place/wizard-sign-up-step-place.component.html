@@ -1,0 +1,35 @@
+<div>
+  <div style="padding: 15px;">
+    <h1 style="font-weight: bold; color: white;">Preferencias de tu cuenta</h1>
+  </div>
+  <div>
+
+    <form [formGroup]="form" (ngSubmit)="onNextClick()">
+    <div style="padding: 10px; margin-left: 5px;">
+      <ion-label>Servicio preferido</ion-label>
+    </div>
+    <ion-item>
+      <ion-select formControlName="servicio" (ionChange)="onChangeServicio()" placeholder="Selecciona una opcion">
+        <ion-select-option value="cabello">Corte de cabello</ion-select-option>
+        <ion-select-option value="barba">Corte de barba</ion-select-option>
+        <ion-select-option value="cejas">Perfilado de cejas</ion-select-option>
+      </ion-select>
+         </ion-item>
+  
+    <app-checkbox-list [titulo]="'Dias preferidos'" [items]="itemsDias"></app-checkbox-list>
+
+    <app-checkbox-list [titulo]="'Horarios preferidos'" [items]="itemsHorarios"></app-checkbox-list>
+
+    <ion-item style="width: 96%;">
+      <ion-label>Notas</ion-label>
+      <ion-textarea type="text" formControlName="notas"></ion-textarea>
+    </ion-item>
+  </form>
+  </div>
+<br>
+  <div style="padding: 15px;display: flex;
+  justify-content: space-between;">
+    <ion-button color="danger" style="width: 94%; color: white;" (click)="cancel()">Atras</ion-button>
+    <ion-button color="success" type="submit" style="width: 94%; color: white;" (click)="onNextClick()">Finalizar</ion-button>
+  </div>
+</div>

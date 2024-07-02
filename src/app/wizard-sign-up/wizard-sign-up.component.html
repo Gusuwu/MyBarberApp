@@ -1,0 +1,29 @@
+<div class="wizard-header">
+  <button class="step-button" [class.active]="currentStep === 1" (click)="changeStep(1)">1</button>
+  <button class="step-button" [class.active]="currentStep === 2" (click)="changeStep(2)">2</button>
+</div>
+<div>
+  <app-wizard-sign-up-step-account #accountComponent *ngIf="currentStep === 1" (nextStep)="goToStep2()"></app-wizard-sign-up-step-account>
+  <app-wizard-sign-up-step-place #preferenceComponent *ngIf="currentStep === 2" (finishStep)="finishStep()" (backStep)="changeStep(1)"></app-wizard-sign-up-step-place>
+  <div *ngIf="currentStep === 3">
+        
+    <ion-content [fullscreen]="true">
+    <div style="padding: 15px;text-align: center;">
+      <h1 style="font-weight: bold; color: white;">Registro completo!</h1>
+    </div>
+      <br>
+      <div style="display: flex; justify-content: center;">
+        <ion-icon name="checkmark-circle" style="font-size: 10em;" color="success"></ion-icon>
+      </div>
+      <div style="padding: 15px;">
+        <h3 style="color: white;text-align: center;">Ahora puedes ingresar a tu cuenta!</h3>
+      </div>
+    <br>
+      <div style="display: flex;
+      justify-content: center;">
+        <ion-button color="success" style="width: 94%; color: white;" (click)="goToLogin()">Ingresar</ion-button>
+      </div>
+    </ion-content>
+    
+  </div>
+</div>

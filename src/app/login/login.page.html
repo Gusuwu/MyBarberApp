@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>MyBarber</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <br>
+  <br>
+  <div style="display: flex; justify-content: center;">
+    <ion-icon name="cut-outline" style="font-size: 10em;"></ion-icon>
+  </div>
+  <br>
+
+  <div style="padding: 15px;">
+    <h1 style="font-weight: bold; color: white;">Ingresá</h1>
+  </div>
+  <div>
+    <form [formGroup]="form">
+    <ion-item style="width: 96%;">
+      <ion-label >Usuario</ion-label>
+      <ion-input type="text" formControlName="usuario"></ion-input>
+      <span *ngIf="form.get('usuario')?.touched && (form.get('usuario')?.value == null || form.get('usuario')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+    </ion-item>
+  
+    <ion-item style="width: 96%;">
+      <ion-label >Contraseña</ion-label>
+      <ion-input type="password" formControlName="contrasena"></ion-input>
+      <span *ngIf="form.get('contrasena')?.touched && (form.get('contrasena')?.value == null || form.get('contrasena')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+
+    </ion-item>
+  </form>
+  </div>
+<br>
+  <div style="display: flex;
+  justify-content: center;">
+    <ion-button color="success" style="width: 94%; color: white;" (click)="login()">Ingresar</ion-button>
+  </div>
+  
+  <div style="padding: 15px;display: flex;
+  justify-content: space-between;">
+    <span style="color: white;">Olvidé mi contraseña</span>
+    <a style="font-weight: bold;" (click)="register()">Registrarme</a>
+  </div>
+</ion-content>

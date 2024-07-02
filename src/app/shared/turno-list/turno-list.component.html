@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Turnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let turno of turnos">
+      <ion-label>
+        <h2>Barbero: {{ turno.nombreBarbero }}</h2>
+        <h2>Servicio: {{ turno.descripcionPrecio }}</h2>
+        <h2>Precio: {{ turno.valorPrecio | currency}}</h2>
+        <h2>Horario: {{ turno.dia | date:"dd MMMM yyyy" }} - {{ turno.horario }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,19 @@
+<header-barber></header-barber>
+<ion-content [fullscreen]="true">
+  <div style="padding: 2px;text-align: center;">
+    <h1>Tu Cuenta</h1>
+    <p>Aqui podras ver datos de tu cuenta, editarlos, cambiar tu foto y cerrar sesion</p>
+  </div>
+  <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+    <img style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;" [src]="imagen">
+    <span style="font-size: 32px; padding-top: 5px;">{{ usuario.nombre | uppercase }}</span>
+    <span style="font-size: 25px; color:rgba(211, 211, 211, 0.753);padding-bottom: 5px;">{{ usuario.usuario }}</span>
+  </div>
+
+  <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="goToInfo()">Info de la cuenta</ion-button>
+  <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="edit()">Editar cuenta</ion-button>
+  <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="changePhoto()">Cambir foto</ion-button>
+  <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="changePassword()">Cambir contrasena</ion-button>
+  <ion-button color="danger" type="submit" style="width: 100%; color: white;" (click)="closeSession()">Cerrar Sesion</ion-button>
+
+</ion-content>

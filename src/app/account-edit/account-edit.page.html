@@ -1,0 +1,45 @@
+<header-barber></header-barber>
+
+<ion-content [fullscreen]="true">
+  <div style="padding: 15px;">
+    <h1 style="font-weight: bold; color: white;">Datos de tu cuenta</h1>
+  </div>
+  <div *ngIf="form">
+    <form [formGroup]="form">
+      <ion-item style="width: 96%;" *ngIf="form">
+        <ion-label >Usuario</ion-label>
+        <ion-input type="text" formControlName="usuario"></ion-input>
+        <span *ngIf="form.get('usuario')?.touched && (form.get('usuario')?.value == null || form.get('usuario')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+      </ion-item>
+
+      <ion-item style="width: 96%;" *ngIf="form">
+        <ion-label >Correo</ion-label>
+        <ion-input type="mail" formControlName="correo"></ion-input>
+        <span *ngIf="form.get('correo')?.touched && (form.get('correo')?.value == null || form.get('correo')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+        <span *ngIf="form.get('correo')?.touched && form.get('correo')?.hasError('email')" style="font-size: 15px; color: red;">Ingrese un correo valido</span>
+      </ion-item>
+    
+      <ion-item style="width: 96%;" *ngIf="form">
+        <ion-label >Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+        <span *ngIf="form.get('nombre')?.touched && (form.get('nombre')?.value == null || form.get('nombre')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+      </ion-item>
+
+      <ion-item style="width: 96%;" *ngIf="form">
+        <ion-label >Telefono</ion-label>
+        <ion-input type="tel" formControlName="telefono"></ion-input>
+        <span *ngIf="form.get('telefono')?.touched && (form.get('telefono')?.value == null || form.get('telefono')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+      </ion-item>
+      <ion-item style="width: 96%;" *ngIf="form">
+        <ion-label >Notas</ion-label>
+        <ion-textarea type="text" formControlName="notas"></ion-textarea>
+        <span *ngIf="form.get('notas')?.touched && (form.get('notas')?.value == null || form.get('notas')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+      </ion-item>
+    </form>
+  </div>
+  <div style="padding: 15px;display: flex;
+  justify-content: space-between;" *ngIf="form">
+    <ion-button color="danger" style="width: 94%; color: white;" (click)="cancel()">Cancelar</ion-button>
+    <ion-button color="success" type="submit" style="width: 94%; color: white;" (click)="save()">Guardar</ion-button>
+  </div>
+</ion-content>

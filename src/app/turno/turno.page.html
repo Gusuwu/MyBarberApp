@@ -1,0 +1,43 @@
+<header-barber></header-barber>
+
+<ion-content [fullscreen]="true">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" #turnoForm="ngForm">
+        <ion-item style="width: 100%;">
+          <ion-label for="barbero">Barbero:</ion-label>
+          <ion-select id="barbero" required name="idBarbero" formControlName="barbero" placeholder="Selecciona un barbero">
+            <ion-select-option *ngFor="let barbero of barberos" [value]="barbero.id">{{ barbero.nombre }}</ion-select-option>
+          </ion-select>
+          <span *ngIf="form.get('barbero')?.touched && (form.get('barbero')?.value == null || form.get('barbero')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+        </ion-item>
+      
+        <ion-item style="width: 100%;">
+          <ion-label for="precio">Servicio:</ion-label>
+          <ion-select id="precio" required formControlName="precio" name="idPrecio" placeholder="Selecciona un serivicio">
+            <ion-select-option *ngFor="let precio of precios" [value]="precio.id">{{ precio.descripcion }} - {{ precio.valor | currency }}</ion-select-option>
+          </ion-select>
+          <span *ngIf="form.get('precio')?.touched && (form.get('precio')?.value == null || form.get('precio')?.value === '')" style="font-size: 15px; color: red;">Seleccione un serivico</span>
+        </ion-item>
+        <ion-item>
+            <ion-datetime locale="es-ES" [showDefaultTitle]="true" display-format="YYYY-MM-DD" picker-format="YYYY-MM-DD" presentation="date" formControlName="dia" [min]="minDate" [isDateEnabled]="isDateEnabled">
+                <span slot="title">Selecciona un dia</span>
+            </ion-datetime>
+            <span *ngIf="form.get('dia')?.touched && (form.get('dia')?.value == null || form.get('dia')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Horario</ion-label>
+            <ion-select formControlName="horario" placeholder="Selecciona un horario">
+              <ion-select-option *ngFor="let horario of horariosDisponibles" [value]="horario">{{ horario }}</ion-select-option>
+            </ion-select>
+            <span *ngIf="form.get('horario')?.touched && (form.get('horario')?.value == null || form.get('horario')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+          </ion-item>
+          <div style="display: flex;
+  justify-content: center;">
+            <ion-button type="submit"  color="success" style="width: 100%; color: white;">Agendar Turno</ion-button>
+          </div>
+        </form>
+      
+      <div *ngIf="errorMessage" style="color: red;">
+        {{ errorMessage }}
+      </div>      
+</ion-content>

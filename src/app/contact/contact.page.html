@@ -1,0 +1,44 @@
+<header-barber></header-barber>
+
+<ion-content [fullscreen]="true">
+  <div style="padding: 2px;text-align: center;">
+    <h1>Contactanos!</h1>
+ <!--   <p>Dejanos tu mensaje con tu duda o recomendacion en el siguiente formulario</p> -->
+  </div>
+  <!--
+  <form [formGroup]="form">
+  <ion-item style="width: 96%;">
+    <ion-label >Nombre</ion-label>
+    <ion-input type="text" formControlName="nombre"></ion-input>
+    <span *ngIf="form.get('nombre')?.touched && (form.get('nombre')?.value == null || form.get('nombre')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+  </ion-item>
+
+  <ion-item style="width: 96%;">
+    <ion-label >Correo</ion-label>
+    <ion-input type="tel" formControlName="correo"></ion-input>
+    <span *ngIf="form.get('correo')?.touched && (form.get('correo')?.value == null || form.get('correo')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+  </ion-item>
+  <ion-item style="width: 96%;">
+    <ion-label >Mensaje</ion-label>
+    <ion-textarea type="text" formControlName="mensaje"></ion-textarea>
+    <span *ngIf="form.get('mensaje')?.touched && (form.get('mensaje')?.value == null || form.get('mensaje')?.value === '')" style="font-size: 15px; color: red;">Complete el campo</span>
+  </ion-item>
+</form>
+
+<div style="padding: 5px;display: flex;
+justify-content: space-between;">
+  <ion-button color="success" type="submit" style="width: 100%; color: white;" (click)="sendMail()">Enviar</ion-button>
+</div>
+-->
+<div style="padding: 2px;text-align: center;">
+  <p>Podes contactarnos mediante Whatsapp o directamente por mail si te es mas comodo!</p>
+</div>
+<div style="display: flex; justify-content: space-evenly; flex-wrap: wrap; align-items: center;">
+  <div style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color:springgreen; border-radius: 15px; padding: 5px;">
+    <ion-icon name="logo-whatsapp" slot="icon-only" style="font-size: 3em;" (click)="openWhatsApp()"></ion-icon>   
+  </div>
+  <div style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue; border-radius: 15px; padding: 5px;">
+    <ion-icon name="mail" slot="icon-only" style="font-size: 3em;" (click)="openMail()"></ion-icon> 
+  </div>
+</div>
+</ion-content>

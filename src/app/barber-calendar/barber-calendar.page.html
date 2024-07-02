@@ -1,0 +1,15 @@
+<header-barber></header-barber>
+
+<ion-content [fullscreen]="true">
+  <h2>Seleccione un dia:</h2>
+  <ion-datetime #datepicker presentation="date" (ionChange)="onDateChange($event)" [preferWheel]="true"></ion-datetime>
+  <div >
+    <ion-button style="width: 98%;" (click)="buscarTurnos()">Buscar</ion-button>
+  </div>
+  <div *ngFor="let turno of turnos">
+    <turno-card [turno]="turno"></turno-card>
+  </div>
+  <div *ngIf="turnos.length === 0">
+    <h2> No hay turnos para esta fecha</h2>
+  </div>
+</ion-content>

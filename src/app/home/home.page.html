@@ -1,20 +1,71 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<header-barber [usuario]="usuario" [showBack]="false"></header-barber>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div style="text-align: center;">
+    <h1>Bienvenido al inicio!</h1>
+  </div>
+  <div style="padding: 15px;text-align: center;">
+    <h3>Tenemos estas opciones</h3>
+  </div>
+  <div style="display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;">
+    
+  </div>
+  <div style="display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;">
+    <div (click)="addTurno()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+        <ion-icon name="add-circle-outline" slot="icon-only" style="font-size: 3em;"></ion-icon>   
+        <ion-label >Nuevo turno</ion-label>
+    </div>
+    <div (click)="seePrices()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+        <ion-icon name="cash" slot="icon-only" style="font-size: 3em;"></ion-icon>
+        <ion-label>Precios</ion-label> 
+    </div>
+    <!--
+    <div (click)="seeCuts()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+        <ion-icon name="images" slot="icon-only" style="font-size: 3em;"></ion-icon> 
+      <ion-label>Cortes</ion-label> 
+    </div>
+    -->
+    <div *ngIf="usuario.role === 0" (click)="seeTurnos()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+      <ion-icon name="list" slot="icon-only" style="font-size: 3em;"></ion-icon>   
+      <ion-label >Ver mis turnos</ion-label>
+    </div>
+    <div *ngIf="usuario.role === 1" (click)="seeTurnosAdmin()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+      <ion-icon name="list" slot="icon-only" style="font-size: 3em;"></ion-icon>   
+      <ion-label >Ver turnos</ion-label>
+    </div>
+  </div>
+  <div style="display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;margin-top: 10px;">
+    <div (click)="seeBarbers()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+      <ion-icon name="people" slot="icon-only" style="font-size: 3em;"></ion-icon> 
+      <ion-label>Barberos</ion-label> 
+    </div>
+    <div (click)="goToContact()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+      <ion-icon name="chatbox" slot="icon-only" style="font-size: 3em;"></ion-icon> 
+      <ion-label>Consultas</ion-label> 
+    </div>
+    <div (click)="goToPay()" style="width: 30%; color: white; display: flex; flex-direction: column; align-items: center; background-color: steelblue;border-radius: 15px; padding: 5px;">
+      <ion-icon name="wallet" slot="icon-only" style="font-size: 3em;"></ion-icon> 
+      <ion-label>Metodo pago</ion-label> 
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <h3>Nuestra ubicacion</h3>
+  </div>
+  <div style="display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;">
+    <h4>Avenida Edison 42</h4>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7080.308744078703!2d-59.00390757727662!3d-27.46445301315715!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450c909077fff5%3A0x8cc0921476afcde2!2sSALINAS%20BARBER!5e0!3m2!1ses-419!2sar!4v1716947740898!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </ion-content>
