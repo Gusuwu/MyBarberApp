@@ -22,6 +22,6 @@ export class HeaderBarberComponent  implements OnInit {
   }
 
   myAccount(){
-    this.route.navigateByUrl('/account');
+    this.route.navigateByUrl('account');
   }
 }

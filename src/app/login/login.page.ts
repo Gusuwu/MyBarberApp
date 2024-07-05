@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
           this.userService.guardarUsuario(usuarioLog);
           this.userService.guardarToken(usuarioLog.token);
           console.log(this.userService.usuarioLog);
-          this.route.navigate(['/home']);
+          this.route.navigateByUrl('home');
         }
       });
     }    

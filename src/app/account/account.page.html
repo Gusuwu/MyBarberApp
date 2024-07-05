@@ -1,5 +1,5 @@
 <header-barber></header-barber>
-<ion-content [fullscreen]="true">
+<ion-content *ngIf="loaded" [fullscreen]="true">
   <div style="padding: 2px;text-align: center;">
     <h1>Tu Cuenta</h1>
     <p>Aqui podras ver datos de tu cuenta, editarlos, cambiar tu foto y cerrar sesion</p>
@@ -13,7 +13,8 @@
   <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="goToInfo()">Info de la cuenta</ion-button>
   <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="edit()">Editar cuenta</ion-button>
   <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="changePhoto()">Cambir foto</ion-button>
-  <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="changePassword()">Cambir contrasena</ion-button>
-  <ion-button color="danger" type="submit" style="width: 100%; color: white;" (click)="closeSession()">Cerrar Sesion</ion-button>
+ <!-- <ion-button color="primary" type="submit" style="width: 100%; color: white;" (click)="changePassword()">Cambir contrasena</ion-button>
+ --> 
+ <ion-button color="danger" type="submit" style="width: 100%; color: white;" (click)="closeSession()">Cerrar Sesion</ion-button>
 
 </ion-content>

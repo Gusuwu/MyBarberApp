@@ -1,6 +1,6 @@
 <header-barber [usuario]="usuario" [showBack]="false"></header-barber>
 
-<ion-content [fullscreen]="true">
+<ion-content *ngIf="loaded" [fullscreen]="true">
   <div style="text-align: center;">
     <h1>Bienvenido al inicio!</h1>
   </div>
@@ -13,7 +13,7 @@
   align-items: center;">
     
   </div>
-  <div style="display: flex;
+  <div *ngIf="loaded" style="display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioViewModel } from '../view-models/usuarioViewModel';
 import { LoginService } from '../services/login.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-account-info',
@@ -10,12 +11,18 @@ import { LoginService } from '../services/login.service';
 export class AccountInfoPage implements OnInit {
 
   usuario: UsuarioViewModel = new UsuarioViewModel;
+  loaded = false;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private apiService: ApiService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     if(this.loginService.usuarioLog){
-      this.usuario = this.loginService.usuarioLog;
+      await this.apiService.getUsuario(this.loginService.usuarioLog.id).subscribe(
+        (usuario) => {
+          this.usuario = usuario;
+          this.loaded = true;
+        }
+      );      
     }
   }
 

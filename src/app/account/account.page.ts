@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioViewModel } from '../view-models/usuarioViewModel';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-account',
@@ -12,15 +13,21 @@ export class AccountPage implements OnInit {
 
   usuario: UsuarioViewModel = new UsuarioViewModel;
   imagen: string = '';
+  loaded = false;
 
-  constructor(private loginService: LoginService, private route:Router) { }
+  constructor(private loginService: LoginService, private route:Router, private apiService: ApiService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     if(this.loginService.usuarioLog){
-      this.usuario = this.loginService.usuarioLog;
-      if (this.usuario.foto) {
-        this.imagen = 'data:image/jpeg;base64,' + this.usuario.fotoUrl;
-      }
+      await this.apiService.getUsuario(this.loginService.usuarioLog.id).subscribe(
+        (usuario) => {
+          this.usuario = usuario;
+          if (this.usuario.foto) {
+            this.imagen = 'data:image/jpeg;base64,' + this.usuario.fotoUrl;
+          }
+          this.loaded = true;
+        }
+      );      
     }
   }
 

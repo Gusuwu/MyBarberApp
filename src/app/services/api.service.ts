@@ -11,13 +11,13 @@ import { TurnoViewModel } from '../view-models/turnoViewModel';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrlUsuarios = 'http://localhost:5000/Usuario/GetUsuarios'; // URL de tu API para usuarios
-  private apiUrlBarberos = 'http://localhost:5000/Usuario/GetBarberos';
-  private apiUrlPrecios = 'http://localhost:5000/Precio';
-  private apiUrlCortes = 'http://localhost:5000/Corte/GetCortes';
-  private apiUrlUsuario = 'http://localhost:5000/Usuario';
-  private apiUrlTurno = 'http://localhost:5000/Turno';
-  private apiUrlMail = 'http://localhost:5000/Mail'
+  private apiUrlUsuarios = 'http://www.mybarberapp.somee.com/Usuario/GetUsuarios'; // URL de tu API para usuarios
+  private apiUrlBarberos = 'http://www.mybarberapp.somee.com/Usuario/GetBarberos';
+  private apiUrlPrecios = 'http://www.mybarberapp.somee.com/Precio';
+  private apiUrlCortes = 'http://www.mybarberapp.somee.com/Corte/GetCortes';
+  private apiUrlUsuario = 'http://www.mybarberapp.somee.com/Usuario';
+  private apiUrlTurno = 'http://www.mybarberapp.somee.com/Turno';
+  private apiUrlMail = 'http://www.mybarberapp.somee.com/Mail'
 
   constructor(private http: HttpClient) { }
 
